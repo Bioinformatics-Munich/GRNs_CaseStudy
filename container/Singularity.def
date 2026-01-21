@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: aertslab/pyscenic_scanpy:0.12.1_1.9.1
+
+%environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%post
+    # Install JupyterLab and dependencies
+    pip install --no-cache-dir \
+        jupyterlab==4.0.11 \
+        jupyter-server==2.12.1 \
+        notebook==7.0.7
+
+%labels
+    Author YourName
+    Version v1.0
+    Description pySCENIC container with added JupyterLab support
